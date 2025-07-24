@@ -1,4 +1,5 @@
 # Simple Chatbot with search
+![](./Screenshot.png)
 ```
 python3 -m venv .venv
 ```
