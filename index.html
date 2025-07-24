@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hacky Chatbot</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #0f0;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      background-color: #222;
+      color: #0f0;
+      border: 1px solid #0f0;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #0f0;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0c0;
+    }
+
+    hr {
+      border: 1px solid #0f0;
+      margin: 20px 0;
+    }
+
+    .message {
+      margin-bottom: 12px;
+    }
+
+    .message strong {
+      color: #6f6;
+    }
+
+    a {
+      color: #6df;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>💻 Hacker-Style Chatbot</h2>
+
+<form method="POST" id="chatForm">
+  <label for="message">Enter you question. Feel free to ask searching the internet.</label><br><br>
+  <input type="text" name="message" id="message"><br><br>
+  <button type="submit">Send</button>
+  <button type="submit" name="clear" value="1">Clear</button>
+</form>
+
+<script>
+document.getElementById('message').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    document.getElementById('chatForm').submit();
+  }
+});
+</script>
+
+
+  <hr>
+  <div>
+    {{ chat_history }}
+  </div>
+</body>
+</html>
